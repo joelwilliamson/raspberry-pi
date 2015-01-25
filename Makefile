@@ -42,7 +42,7 @@ kernel.img: $(OBJFILES) kernel.ld
 	@$(COPIER) kernel.elf -O binary kernel.img
 
 clean:
-	-$(RM) $(wildcard $(OBJFILES) $(DEPFILES) kernel.img kernel.elf)
+	-$(RM) $(wildcard $(OBJFILES) $(DEPFILES) kernel.img kernel.elf kernel.list kernel.map)
 
 dist:
 	tar cvf kernel.tar $(ALLFILES)
