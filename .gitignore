@@ -33,3 +33,9 @@
 # Build files
 build/
 build/*
+
+# Generated files
+kernel.elf
+kernel.img
+kernel.list
+kernel.map
