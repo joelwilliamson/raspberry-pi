@@ -29,3 +29,7 @@
 
 # Temporary files
 *~
+
+# Build files
+build/
+build/*
