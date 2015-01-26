@@ -32,7 +32,7 @@ AS := $(TARGET)-as
 
 all: kernel.img
 
-install: kernel.img
+install:
 	@mount /dev/sdf1 /mnt/sd_card
 	@cp kernel.img /mnt/sd_card/kernel.img
 	@umount /mnt/sd_card
