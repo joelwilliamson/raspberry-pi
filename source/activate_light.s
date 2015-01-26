@@ -6,34 +6,7 @@
 	.section .init
 	.globl _start
 _start:
-	ldr r0,=0x20200000 	@ This load the address of the start of GPIO from a literal area
-	mov r1,#1
-	lsl r1,#18 		@ This gets the bit pattern for setting pin 16 to output
-	str r1,[r0,#4]
-
-light_on:
-	mov r2,#1		@ Set the bit to activate the LED
-	lsl r2,#16
-	str r2,[r0,#0x28]	@ Store the bit to the pin
-
-	mov r1,#0x3F0000	@ Wait for some time
-light_on_delay:
-	sub r1,r1,#1
-	cmp r1,#0
-	bne light_on_delay	@ If the counter is still positive, keep looping
-
-light_off:	
-	mov r2,#1
-	lsl r2,#16
-	str r2,[r0,#0x1C]
-
-	mov r1,#0x3F0000
-light_off_delay:
-	sub r1,r1,#1
-	cmp r1,#0
-	bne light_off_delay
-
-	b light_on
+	bl kmain
 
 wait:	b wait
 	
