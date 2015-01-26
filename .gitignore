@@ -39,3 +39,6 @@ kernel.elf
 kernel.img
 kernel.list
 kernel.map
+
+# GCC dependency files
+*.d
